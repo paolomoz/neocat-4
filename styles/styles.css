@@ -1,22 +1,19 @@
 /* :root CSS Custom Properties */
 :root {
-  --color-primary: #007bff; /* A modern, accessible blue */
-  --color-secondary: #6c757d; /* A subtle gray for secondary actions */
-  --color-background: #f8f9fa; /* Light gray for a clean background */
-  --color-text: #212529; /* Dark gray for good readability */
-  --color-accent: #28a745; /* A green for positive highlights */
+  --color-primary: #007bff; /* Example primary color */
+  --color-secondary: #6c757d; /* Example secondary color */
+  --color-background: #f8f9fa; /* Light background */
+  --color-text: #343a40; /* Dark text */
+  --color-accent: #28a745; /* Example accent color */
 
-  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern heading font */
-  --font-body: 'Roboto', sans-serif; /* Readable and versatile body font */
+  --font-heading: sans-serif; /* Clean sans-serif for headings */
+  --font-body: sans-serif; /* Clean sans-serif for body */
 
-  --spacing-small: 1rem;
-  --spacing-medium: 2rem;
-  --spacing-large: 3rem;
-
-  --border-radius: 0.25rem;
+  --spacing-vertical: 2rem;
+  --spacing-horizontal: 1rem;
 }
 
-/* Body and Text Base Styles */
+/* Base Body Styles */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -30,88 +27,106 @@ body {
 /* Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: bold;
   color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: var(--spacing-small);
+  margin-bottom: 0.5rem;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 {
+  font-size: 2.5rem;
+}
 
-/* Button Styles */
-.button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
   font-size: 1rem;
-  font-weight: 500;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  border-radius: var(--border-radius);
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-.button.primary {
-  background-color: var(--color-primary);
-  color: white;
-}
-
-.button.primary:hover {
-  background-color: #0056b3; /* Darken on hover */
-}
-
-.button.secondary {
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-.button.secondary:hover {
-  background-color: #545b62; /* Darken on hover */
 }
 
 /* Link Styles */
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-  color: #0056b3; /* Darken on hover */
   text-decoration: underline;
 }
 
-/* Container Max-Width */
-.section, main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--spacing-medium);
+/* Button Styles */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
 }
 
-/* Section Spacing */
+.button.primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.button.primary:hover {
+  background-color: #0056b3; /* Darker shade for hover */
+}
+
+.button.secondary {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.button.secondary:hover {
+  background-color: #545b62; /* Darker shade for hover */
+}
+
+/* Container Styles (Sections and Main) */
 .section {
-  margin-bottom: var(--spacing-large);
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
 }
 
 /* Responsive Breakpoints */
 @media (min-width: 600px) {
-  .section, main {
-    padding: var(--spacing-medium);
+  h1 {
+    font-size: 3rem;
+  }
+  main {
+      padding: var(--spacing-vertical) calc(var(--spacing-horizontal) * 2); /* Wider spacing on larger screens */
   }
 }
 
 @media (min-width: 900px) {
-  .section, main {
-    padding: var(--spacing-large);
+  h2 {
+    font-size: 2.5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  /* Adjustments for larger screens if needed */
+  h3 {
+    font-size: 2rem;
+  }
 }
