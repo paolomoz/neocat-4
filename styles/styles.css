@@ -1,20 +1,22 @@
-/* :root CSS custom properties */
+/* CSS Design System for Tech Startup */
+
 :root {
-  --color-primary: #007bff; /* Example primary color */
-  --color-secondary: #6c757d; /* Example secondary color */
-  --color-background: #f8f9fa; /* Light background */
-  --color-text: #212529; /* Dark text for readability */
-  --color-accent: #28a745; /* Example accent color */
+  /* Colors */
+  --color-primary: #007bff; /* Blue accent */
+  --color-secondary: #6c757d; /* Gray */
+  --color-background: #f8f9fa; /* Light gray background */
+  --color-text: #343a40; /* Dark gray text */
+  --color-white: #ffffff;
 
-  --font-heading: 'Roboto', sans-serif; /* Clean sans-serif */
-  --font-body: 'Open Sans', sans-serif; /* Readable sans-serif */
+  /* Typography */
+  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-body: 'Open Sans', sans-serif;
 
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 2rem;
+  /* Spacing */
+  --spacing-vertical: 2rem;
 }
 
-/* Body and text base styles */
+/* Base Styles */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -22,16 +24,15 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   margin: 0;
-  padding: 0;
 }
 
-/* Heading styles */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--color-text);
   line-height: 1.2;
-  margin-bottom: var(--spacing-small);
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
 }
 
 h1 {
@@ -58,7 +59,21 @@ h6 {
   font-size: 1rem;
 }
 
-/* Button styles */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Link Styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -74,7 +89,7 @@ h6 {
 
 .button.primary {
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .button.primary:hover {
@@ -83,52 +98,51 @@ h6 {
 
 .button.secondary {
   background-color: var(--color-secondary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .button.secondary:hover {
   background-color: #545b62;
 }
 
-/* Link styles */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+/* Container Styles */
+.section {
+  padding: var(--spacing-vertical) 0;
 }
 
-a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-/* Container max-width */
-.section,
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-medium);
+  padding: 0 1rem;
 }
 
-/* Section spacing */
-.section {
-  padding: var(--spacing-large) var(--spacing-medium);
-}
-
+/* Responsive Design */
 @media (min-width: 600px) {
-  .section {
-    padding: var(--spacing-large) var(--spacing-medium);
+  main {
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
   }
 }
 
 @media (min-width: 900px) {
-  .section {
-    padding: var(--spacing-large) var(--spacing-medium);
+  main {
+    padding: 0 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
   }
 }
 
 @media (min-width: 1200px) {
+  main {
+    padding: 0 4rem;
+  }
+
   .section {
-    padding: var(--spacing-large) var(--spacing-medium);
+    padding: calc(var(--spacing-vertical) * 1.5) 0;
   }
 }
