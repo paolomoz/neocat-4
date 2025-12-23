@@ -1,20 +1,20 @@
-/* CSS Design System - Modern Business (Tech) - Dark Theme */
-
+/* :root CSS custom properties */
 :root {
-  --color-primary: #6366f1; /* Indigo */
-  --color-secondary: #a855f7; /* Purple */
-  --color-background: #0f172a; /* Dark Navy */
-  --color-text: #f8fafc; /* Off-White */
-  --color-accent: #3b82f6; /* Light Blue */
+  --color-primary: #007bff; /* Example primary color */
+  --color-secondary: #6c757d; /* Example secondary color */
+  --color-background: #f8f9fa; /* Light background */
+  --color-text: #212529; /* Dark text for readability */
+  --color-accent: #28a745; /* Example accent color */
 
-  --font-heading: 'Roboto Slab', serif;
-  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Roboto', sans-serif; /* Clean sans-serif */
+  --font-body: 'Open Sans', sans-serif; /* Readable sans-serif */
 
-  --spacing-vertical: 2rem;
-  --spacing-horizontal: 1rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
 }
 
-/* Base Styles */
+/* Body and text base styles */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -22,25 +22,43 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   margin: 0;
+  padding: 0;
 }
 
-/* Headings */
+/* Heading styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-small);
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.75rem; }
-h5 { font-size: 1.5rem; }
-h6 { font-size: 1.25rem; }
+h1 {
+  font-size: 2.5rem;
+}
 
-/* Buttons */
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Button styles */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -48,77 +66,69 @@ h6 { font-size: 1.25rem; }
   font-weight: 600;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
   border: none;
   border-radius: 0.25rem;
-  cursor: pointer;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .button.primary {
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: #fff;
 }
 
 .button.primary:hover {
-  background-color: #4f46e5; /* Darker Indigo */
+  background-color: #0056b3;
 }
 
 .button.secondary {
   background-color: var(--color-secondary);
-  color: var(--color-text);
+  color: #fff;
 }
 
 .button.secondary:hover {
-  background-color: #9333ea; /* Darker Purple */
+  background-color: #545b62;
 }
 
-/* Links */
+/* Link styles */
 a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-  color: #60a5fa; /* Lighter Blue */
+  color: #0056b3;
   text-decoration: underline;
 }
 
-/* Containers */
-.section {
-  padding: var(--spacing-vertical) var(--spacing-horizontal);
-}
-
+/* Container max-width */
+.section,
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-vertical) var(--spacing-horizontal);
+  padding: var(--spacing-medium);
 }
 
-/* Section Spacing */
+/* Section spacing */
 .section {
-  margin-bottom: var(--spacing-vertical);
+  padding: var(--spacing-large) var(--spacing-medium);
 }
 
-/* Responsive Breakpoints */
 @media (min-width: 600px) {
-  h1 { font-size: 3.5rem; }
-  h2 { font-size: 3rem; }
-  main {
-    padding: calc(var(--spacing-vertical) * 1.2) var(--spacing-horizontal);
+  .section {
+    padding: var(--spacing-large) var(--spacing-medium);
   }
 }
 
 @media (min-width: 900px) {
-  h1 { font-size: 4rem; }
-  h2 { font-size: 3.5rem; }
-  main {
-    padding: calc(var(--spacing-vertical) * 1.5) var(--spacing-horizontal);
+  .section {
+    padding: var(--spacing-large) var(--spacing-medium);
   }
 }
 
 @media (min-width: 1200px) {
-  main {
-    padding: calc(var(--spacing-vertical) * 2) var(--spacing-horizontal);
+  .section {
+    padding: var(--spacing-large) var(--spacing-medium);
   }
 }
