@@ -1,22 +1,22 @@
-/* CSS Design System for Tech Startup */
-
+/* :root CSS Custom Properties */
 :root {
-  /* Colors */
-  --color-primary: #007bff; /* Blue accent */
-  --color-secondary: #6c757d; /* Gray */
-  --color-background: #f8f9fa; /* Light gray background */
-  --color-text: #343a40; /* Dark gray text */
-  --color-white: #ffffff;
+  --color-primary: #007bff; /* A modern, accessible blue */
+  --color-secondary: #6c757d; /* A subtle gray for secondary actions */
+  --color-background: #f8f9fa; /* Light gray for a clean background */
+  --color-text: #212529; /* Dark gray for good readability */
+  --color-accent: #28a745; /* A green for positive highlights */
 
-  /* Typography */
-  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-body: 'Open Sans', sans-serif;
+  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern heading font */
+  --font-body: 'Roboto', sans-serif; /* Readable and versatile body font */
 
-  /* Spacing */
-  --spacing-vertical: 2rem;
+  --spacing-small: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 3rem;
+
+  --border-radius: 0.25rem;
 }
 
-/* Base Styles */
+/* Body and Text Base Styles */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -24,125 +24,94 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   margin: 0;
+  padding: 0;
 }
 
-/* Typography */
+/* Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
   color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-small);
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-/* Link Styles */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 
 /* Button Styles */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .button.primary {
   background-color: var(--color-primary);
-  color: var(--color-white);
+  color: white;
 }
 
 .button.primary:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darken on hover */
 }
 
 .button.secondary {
   background-color: var(--color-secondary);
-  color: var(--color-white);
+  color: white;
 }
 
 .button.secondary:hover {
-  background-color: #545b62;
+  background-color: #545b62; /* Darken on hover */
 }
 
-/* Container Styles */
-.section {
-  padding: var(--spacing-vertical) 0;
+/* Link Styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
-main {
+a:hover {
+  color: #0056b3; /* Darken on hover */
+  text-decoration: underline;
+}
+
+/* Container Max-Width */
+.section, main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: var(--spacing-medium);
 }
 
-/* Responsive Design */
-@media (min-width: 600px) {
-  main {
-    padding: 0 2rem;
-  }
+/* Section Spacing */
+.section {
+  margin-bottom: var(--spacing-large);
+}
 
-  h1 {
-    font-size: 3rem;
+/* Responsive Breakpoints */
+@media (min-width: 600px) {
+  .section, main {
+    padding: var(--spacing-medium);
   }
 }
 
 @media (min-width: 900px) {
-  main {
-    padding: 0 3rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
+  .section, main {
+    padding: var(--spacing-large);
   }
 }
 
 @media (min-width: 1200px) {
-  main {
-    padding: 0 4rem;
-  }
-
-  .section {
-    padding: calc(var(--spacing-vertical) * 1.5) 0;
-  }
+  /* Adjustments for larger screens if needed */
 }
