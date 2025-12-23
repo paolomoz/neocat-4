@@ -1,17 +1,16 @@
-/* :root CSS Custom Properties */
+/* CSS Design System for AI Startup */
+
 :root {
-  --color-primary: #007bff; /* Example Primary Color */
-  --color-secondary: #6c757d; /* Example Secondary Color */
-  --color-background: #f8f9fa; /* Light Background */
-  --color-text: #212529; /* Dark Text */
-  --color-accent: #28a745; /* Example Accent color */
-  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern heading font */
-  --font-body: 'Roboto', sans-serif; /* Clean, readable body font */
-  --spacing-vertical: 2rem; /* Standard vertical spacing */
-  --spacing-horizontal: 1rem; /* Standard horizontal spacing */
+  --color-primary: #007BFF; /* Primary Blue */
+  --color-secondary: #6C757D; /* Secondary Gray */
+  --color-background: #F8F9FA; /* Light Gray Background */
+  --color-text: #343A40; /* Dark Gray Text */
+  --color-accent: #28A745; /* Accent Green */
+  --font-heading: 'Roboto', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --spacing-vertical: 2rem; /* Vertical spacing for sections */
 }
 
-/* Body and Text Base Styles */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -22,22 +21,47 @@ body {
   padding: 0;
 }
 
-/* Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 {
+  font-size: 2.5rem;
+}
 
-/* Button Styles */
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -48,66 +72,70 @@ h6 { font-size: 1rem; }
   cursor: pointer;
   border: none;
   border-radius: 0.25rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .button.primary {
   background-color: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 .button.primary:hover {
-  background-color: #0056b3; /* Darken on hover */
+  background-color: #0056b3;
 }
 
 .button.secondary {
   background-color: var(--color-secondary);
-  color: white;
+  color: #fff;
 }
 
 .button.secondary:hover {
-  background-color: #545b62; /* Darken on hover */
+  background-color: #545b62;
 }
 
-/* Link Styles */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.section {
+  padding: var(--spacing-vertical) 0;
 }
 
-a:hover {
-  color: #0056b3; /* Darken on hover */
-  text-decoration: underline;
-}
-
-/* Container Max-Width */
-.section, main {
+main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-vertical) var(--spacing-horizontal);
+  padding: 0 1rem;
 }
 
-/* Section Spacing */
-.section {
-  margin-bottom: var(--spacing-vertical);
-}
-
-/* Mobile-First Breakpoints */
+/* Responsive Design */
 @media (min-width: 600px) {
-  .section, main {
-    padding: calc(var(--spacing-vertical) * 1.2) var(--spacing-horizontal);
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
   }
 }
 
 @media (min-width: 900px) {
-  .section, main {
-    padding: calc(var(--spacing-vertical) * 1.5) var(--spacing-horizontal);
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+  .section {
+    padding: calc(var(--spacing-vertical) * 1.5) 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .section, main {
-    padding: calc(var(--spacing-vertical) * 2) var(--spacing-horizontal);
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+  .section {
+    padding: calc(var(--spacing-vertical) * 2) 0;
   }
 }
