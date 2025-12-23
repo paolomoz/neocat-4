@@ -1,19 +1,21 @@
-/* :root CSS Custom Properties */
+/* CSS Design System: Modern Business */
+
 :root {
-  --color-primary: #0070f3; /* Example Primary Color: A modern blue */
-  --color-secondary: #6c757d; /* Example Secondary Color: A muted gray */
-  --color-background: #f8f9fa; /* Light gray for background */
-  --color-text: #212529; /* Dark gray for text */
-  --color-accent: #dc3545; /* Example Accent Color: A subtle red */
+  --color-primary: #0070c0; /* Blue - Primary Brand Color */
+  --color-secondary: #6c757d; /* Gray - Secondary/Neutral Color */
+  --color-background: #f9f9f9; /* Light Gray - Background Color */
+  --color-text: #343a40; /* Dark Gray - Primary Text Color */
+  --color-accent: #28a745; /* Green - Accent Color for Success/Highlights */
 
-  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern sans-serif */
-  --font-body: 'Roboto', sans-serif; /* Another clean, readable sans-serif */
+  --font-heading: 'Roboto Slab', serif; /* Clean, Modern Heading Font */
+  --font-body: 'Open Sans', sans-serif; /* Readable Body Font */
 
-  --spacing-vertical: 2rem; /* Standard vertical spacing */
-  --spacing-horizontal: 1rem; /* Standard horizontal spacing */
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
 }
 
-/* Body and Text Base Styles */
+/* Base Styles */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -24,98 +26,129 @@ body {
   padding: 0;
 }
 
-/* Heading Styles */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text);
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 {
+  font-size: 2.5rem;
+}
 
-/* Button Styles */
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: none;
   border-radius: 0.25rem;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .button.primary {
-  color: #fff;
   background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: #fff;
 }
 
 .button.primary:hover {
-  background-color: #0056b3; /* Darker shade of primary */
-  border-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .button.secondary {
-  color: var(--color-text);
   background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-}
-
-.button.secondary:hover {
-  background-color: #545b62; /* Darker shade of secondary */
-  border-color: #545b62;
   color: #fff;
 }
 
-/* Link Styles */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+.button.secondary:hover {
+  background-color: #545b62;
 }
 
-a:hover {
-  color: #0056b3; /* Darker shade of primary */
-  text-decoration: underline;
+/* Container / Section */
+.section {
+  padding: var(--spacing-md) 0;
 }
 
-/* Container Max-Width */
-.section, main {
+main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-vertical) var(--spacing-horizontal);
+  padding: var(--spacing-sm);
 }
 
-/* Section Spacing */
-.section {
-  padding: var(--spacing-vertical) var(--spacing-horizontal);
-}
-
-/* Responsive Breakpoints */
+/* Media Queries */
 @media (min-width: 600px) {
-  .section, main {
-    padding: calc(var(--spacing-vertical) * 1.2) var(--spacing-horizontal);
+  main {
+    padding: var(--spacing-md);
+  }
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
   }
 }
 
 @media (min-width: 900px) {
-  .section, main {
-    padding: calc(var(--spacing-vertical) * 1.5) var(--spacing-horizontal);
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .section, main {
-    padding: calc(var(--spacing-vertical) * 2) var(--spacing-horizontal);
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
   }
 }
