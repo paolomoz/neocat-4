@@ -1,19 +1,21 @@
-/* :root CSS Custom Properties */
+/* CSS Design System for AI Startup */
+
 :root {
-  --color-primary: #007bff; /* Example primary color */
-  --color-secondary: #6c757d; /* Example secondary color */
-  --color-background: #f8f9fa; /* Light background */
-  --color-text: #343a40; /* Dark text */
-  --color-accent: #28a745; /* Example accent color */
+  --color-primary: #007bff; /* A modern blue */
+  --color-secondary: #6c757d; /* A subtle gray */
+  --color-background: #f8f9fa; /* Light gray background */
+  --color-text: #343a40; /* Dark gray text */
+  --color-accent: #28a745; /* A green accent for success */
 
-  --font-heading: sans-serif; /* Clean sans-serif for headings */
-  --font-body: sans-serif; /* Clean sans-serif for body */
+  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern sans-serif */
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  --spacing-vertical: 2rem;
-  --spacing-horizontal: 1rem;
+  --spacing-small: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 3rem;
 }
 
-/* Base Body Styles */
+/* Base Styles */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -24,12 +26,13 @@ body {
   padding: 0;
 }
 
-/* Heading Styles */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: bold;
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--color-text);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-small);
 }
 
 h1 {
@@ -56,6 +59,10 @@ h6 {
   font-size: 1rem;
 }
 
+p {
+  margin-bottom: var(--spacing-small);
+}
+
 /* Link Styles */
 a {
   color: var(--color-primary);
@@ -71,13 +78,13 @@ a:hover {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   border: none;
   border-radius: 0.25rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .button.primary {
@@ -86,7 +93,7 @@ a:hover {
 }
 
 .button.primary:hover {
-  background-color: #0056b3; /* Darker shade for hover */
+  background-color: #0056b3;
 }
 
 .button.secondary {
@@ -95,38 +102,42 @@ a:hover {
 }
 
 .button.secondary:hover {
-  background-color: #545b62; /* Darker shade for hover */
+  background-color: #545b62;
 }
 
-/* Container Styles (Sections and Main) */
+/* Container Styles */
 .section {
-  padding: var(--spacing-vertical) var(--spacing-horizontal);
+    padding: var(--spacing-large) var(--spacing-small);
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-vertical) var(--spacing-horizontal);
+  padding: var(--spacing-medium) var(--spacing-small);
 }
 
-/* Responsive Breakpoints */
 @media (min-width: 600px) {
-  h1 {
-    font-size: 3rem;
-  }
-  main {
-      padding: var(--spacing-vertical) calc(var(--spacing-horizontal) * 2); /* Wider spacing on larger screens */
-  }
+    .section {
+        padding: var(--spacing-large) var(--spacing-medium);
+    }
+
+    main {
+        padding: var(--spacing-medium) var(--spacing-medium);
+    }
 }
 
 @media (min-width: 900px) {
-  h2 {
-    font-size: 2.5rem;
-  }
+    .section {
+        padding: var(--spacing-large) var(--spacing-large);
+    }
+
+    main {
+        padding: var(--spacing-medium) var(--spacing-large);
+    }
 }
 
 @media (min-width: 1200px) {
-  h3 {
-    font-size: 2rem;
-  }
+    main {
+        padding: var(--spacing-medium);
+    }
 }
