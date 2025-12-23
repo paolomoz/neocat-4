@@ -1,22 +1,19 @@
-/* CSS Design System for AI Startup */
+/* CSS Design System */
 
 :root {
   /* Colors */
-  --color-primary: #007bff; /* A modern blue */
-  --color-secondary: #6c757d; /* A subtle gray */
-  --color-background: #f8f9fa; /* Light gray background */
-  --color-text: #212529; /* Dark gray text */
-  --color-accent: #28a745; /* A green accent color */
+  --color-primary: #007bff; /* Example Primary Color */
+  --color-secondary: #6c757d; /* Example Secondary Color */
+  --color-background: #f8f9fa; /* Light Background */
+  --color-text: #212529; /* Dark Text */
+  --color-accent: #dc3545; /* Example Accent Color */
 
-  /* Typography */
-  --font-heading: 'Roboto', sans-serif; /* Clean sans-serif */
-  --font-body: 'Open Sans', sans-serif; /* Readable sans-serif */
+  /* Fonts */
+  --font-heading: "Roboto", sans-serif; /* Example Heading Font */
+  --font-body: "Open Sans", sans-serif; /* Example Body Font */
 
   /* Spacing */
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
+  --spacing-vertical: 2rem;
 }
 
 /* Base Styles */
@@ -29,21 +26,52 @@ body {
   margin: 0;
 }
 
-/* Headings */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--color-text);
   line-height: 1.2;
-  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 /* Buttons */
 .button {
@@ -65,7 +93,7 @@ h6 { font-size: 1rem; }
 }
 
 .button.primary:hover {
-  background-color: #0056b3; /* Darker shade of primary */
+  background-color: darken(var(--color-primary), 10%);
 }
 
 .button.secondary {
@@ -74,48 +102,34 @@ h6 { font-size: 1rem; }
 }
 
 .button.secondary:hover {
-  background-color: #545b62; /* Darker shade of secondary */
-}
-
-/* Links */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #0056b3; /* Darker shade of primary */
+  background-color: darken(var(--color-secondary), 10%);
 }
 
 /* Container */
 .section {
-    padding: var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-vertical) 0;
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Media Queries (Mobile-First) */
 @media (min-width: 600px) {
-    main {
-        padding: var(--spacing-lg);
-    }
-    .section {
-        padding: var(--spacing-xl) var(--spacing-lg);
-    }
+  main {
+    padding: 0 2rem;
+  }
 }
 
 @media (min-width: 900px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.5rem; }
-  h3 { font-size: 2rem; }
+  main {
+    padding: 0 3rem;
+  }
 }
 
 @media (min-width: 1200px) {
-    /* Adjustments for larger screens if needed */
+  main {
+    padding: 0 4rem;
+  }
 }
