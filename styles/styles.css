@@ -1,69 +1,60 @@
-/* CSS Design System: Modern Business */
-
 :root {
-  --color-primary: #0070c0; /* Blue - Primary Brand Color */
-  --color-secondary: #6c757d; /* Gray - Secondary/Neutral Color */
-  --color-background: #f9f9f9; /* Light Gray - Background Color */
-  --color-text: #343a40; /* Dark Gray - Primary Text Color */
-  --color-accent: #28a745; /* Green - Accent Color for Success/Highlights */
+  --color-primary: #3b82f6;
+  --color-secondary: #64748b;
+  --color-background: #ffffff;
+  --color-text: #1e293b;
+  --color-accent: #3b82f6;
+  --color-border: #e2e8f0;
 
-  --font-heading: 'Roboto Slab', serif; /* Clean, Modern Heading Font */
-  --font-body: 'Open Sans', sans-serif; /* Readable Body Font */
+  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
+  --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  --max-width: 1200px;
+  --radius: 8px;
 }
 
-/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
-  background-color: var(--color-background);
-  margin: 0;
-  padding: 0;
+  background: var(--color-background);
 }
 
-/* Typography */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-text);
+  font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm);
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
 }
 
-/* Links */
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -73,82 +64,41 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Buttons */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
+  background: var(--color-primary);
+  color: white;
   border: none;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.button.primary {
-  background-color: var(--color-primary);
-  color: #fff;
-}
-
-.button.primary:hover {
-  background-color: #0056b3;
+.button:hover {
+  background: var(--color-secondary);
+  text-decoration: none;
 }
 
 .button.secondary {
-  background-color: var(--color-secondary);
-  color: #fff;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
 }
 
-.button.secondary:hover {
-  background-color: #545b62;
-}
-
-/* Container / Section */
 .section {
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-lg) 0;
 }
 
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--spacing-sm);
+@media (max-width: 900px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.75rem; }
+  .section { padding: var(--spacing-md) 0; }
 }
 
-/* Media Queries */
-@media (min-width: 600px) {
-  main {
-    padding: var(--spacing-md);
-  }
-  .section {
-    padding: var(--spacing-lg) 0;
-  }
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 2.25rem;
-  }
-}
-
-@media (min-width: 900px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  h1 {
-    font-size: 4rem;
-  }
-
-  h2 {
-    font-size: 2.75rem;
-  }
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  main { padding: 0 var(--spacing-sm); }
 }
